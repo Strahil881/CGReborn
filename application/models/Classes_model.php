@@ -122,6 +122,13 @@ class Classes_model extends CI_Model{
 	$this->db->where('student_id', $this->input->post('id_of_student'));
 	$this->db->update('students', $data); 
 	}
+	public function add_new_behaviour_name()
+	{
+		$data=array(
+			'behaviour'=>$this->input->post('behaviour')
+			);
+		$this->db->insert('n_behaviour',$data);
+	}
 }
 
 

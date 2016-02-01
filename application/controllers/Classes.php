@@ -108,6 +108,13 @@ class Classes extends CI_Controller{
 			$this->show_students_info($_SESSION['2class_id']);
 		}
     }
+    public function student_behaviours($student_id = 1)
+    {   
+        $data['behaviour_student']=$this->classes_model->show_student_behaviour($student_id);
+        $data['dynamic_view'] = 'classes/show_student_behaviour';
+        $this->load->view('admin/main_template', $data);
+
+    }
     public function add_new_behaviour_name()
     {
         $this->load->library('form_validation');
@@ -126,6 +133,7 @@ class Classes extends CI_Controller{
             $this->add_new_behaviour_name();
         }
     }
+    
 }
 
 ?>

@@ -129,20 +129,40 @@ class User_model extends CI_Model{
 
     public function get_all_admins()
     {
-        $q = $this->db->get_where('users', array('role' => 1));
-        return $q->result_array();
+       // $q = $this->db->get_where('users', array('role' => 1));
+        //return $q->result_array();
+         $this->db->where('role',1);
+        $this->db->where('date_delete !=','NULL');
+        $query = $this->db->get('users');
+        return $query->result_array();
     }
 
     public function get_all_teachers()
     {
-        $this->db->join('teachers', 'users.user_id = teachers.user_id');
-        $q = $this->db->get_where('users', array('role' => 2));
-        return $q->result_array();
+        //$this->db->join('teachers', 'users.user_id = teachers.user_id');
+        //$q = $this->db->get_where('users', array('role' => 2));
+        //return $q->result_array();
+        $this->db->select('*');
+        $this->db->from('teachers');
+        $this->db->join('users', 'teachers.user_id = users.user_id');
+        $this->db->where('users.role',2);
+        $this->db->where('teachers.date_delete !=','NULL');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function delete_admin($id)
     {
-        if($this->db->delete('users', array('user_id' => $id)))
+       // if($this->db->delete('users', array('user_id' => $id)))
+       // {
+        //    return TRUE;
+       // }
+       // return FALSE;
+        $data=array(
+            'date_delete'=>'NULL'
+            );
+        $this->db->where('user_id',$id);
+        if($this->db->update('users', $data))
         {
             return TRUE;
         }
@@ -151,8 +171,22 @@ class User_model extends CI_Model{
 
     public function delete_teacher($id)
     {   
-        $this->db->delete('teachers', array('user_id' => $id));
-        if($this->db->delete('users', array('user_id' => $id)))
+        //$this->db->delete('teachers', array('user_id' => $id));
+       // if($this->db->delete('users', array('user_id' => $id)))
+       / {
+        //    return TRUE;
+       // }
+       // return FALSE;
+         $data1=array(
+            'users.date_delete'=>'NULL'
+            );
+        $data2=array(
+            'teachers.date_delete'=>'NULL'
+            );
+        $this->db->where('user_id',$id);
+        $this->db->update('teachers',$data2);
+        $this->db->where('user_id',$id);
+        if($this->db->update('users',$data1))
         {
             return TRUE;
         }

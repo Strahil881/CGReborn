@@ -51,6 +51,11 @@ class Classes extends CI_Controller{
 
         }
     }
+     public function delete_class($class_id=1)
+    {
+        $this->classes_model->delete_class($class_id);
+        $this->show_classes();
+    }
     public function insert_new_students()
     {
 		$this->load->library('form_validation');

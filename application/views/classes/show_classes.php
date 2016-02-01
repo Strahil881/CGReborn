@@ -26,7 +26,8 @@
                         <td>'.$value['n_class'].'</td>
                         <td>'.$value['year'].'</td>
                         <td>'.$value['class_class'].'</td>
-                       <td><a href="'.base_url().'index.php/classes/show_students_info/'.$value['class_id'].'"><button class="btn btn-warning">Покажи</button></a></td>
+                        <td><a href="'.base_url().'index.php/classes/show_students_info/'.$value['class_id'].'"><button class="btn btn-warning">Покажи</button></a></td>
+                        <td><a href="'.base_url().'classes/delete_class/'.$value['class_id'].'"><button class="btn btn-danger">Изтрий</button></a></td>
                         </tr>';
                        $n++;
                     }

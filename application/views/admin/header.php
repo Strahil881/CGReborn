@@ -296,6 +296,11 @@
                             echo anchor('classes/add_class', '<i class="fa fa-circle"></i> Създай клас');
                             ?>
                         </li>
+                        <li>
+                            <?php
+                            echo anchor('classes/add_new_behaviour_name', '<i class="fa fa-circle"></i> Въведи ново поведение');
+                            ?>
+                            </li>
                     </ul>
                 </li>
                 <li>

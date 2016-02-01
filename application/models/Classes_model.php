@@ -56,11 +56,12 @@ class Classes_model extends CI_Model{
 	}
 	public function show_classes()
 	{
-		$this->db->select('*');
+	$this->db->select('*');
 		$this->db->from('classes');
 		$this->db->join('n_class', 'classes.class = n_class.n_class');
 		$this->db->join('n_years', 'classes.school_year = n_years.year_id');
 		$this->db->join('n_class_classes', 'classes.cclass = n_class_classes.class_class_id');
+		$this->db->where('classes.date_delete !=', 'NULL');
 		$query = $this->db->get();
 		return $query->result_array();
 	}

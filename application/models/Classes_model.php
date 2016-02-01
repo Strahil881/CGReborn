@@ -94,6 +94,7 @@ class Classes_model extends CI_Model{
 		$this->db->from('students');
 		$this->db->join('classes','students.class_id=classes.class_id');
 		$this->db->where('students.class_id', $class_id);
+		$this->db->where('students.date_delete !=', 'NULL');
 		$query=$this->db->get();
 		return $query->result_array();
 	}
@@ -110,7 +111,14 @@ class Classes_model extends CI_Model{
 		$query=$this->db->get();
 		return $query->row_array();
 	}
-	
+	public function delete_student($student_id)
+	{
+		$data = array(
+			'date_delete'=>'NULL'
+			);
+		$this->db->where('student_id', $student_id);
+		$this->db->update('students', $data); 
+	}
 	public function update_student()
 	{
 		$data = array(

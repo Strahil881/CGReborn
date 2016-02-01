@@ -64,6 +64,14 @@ class Classes_model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	public function delete_class($class_id)
+	{
+		$data = array(
+			'date_delete'=>'NULL'
+			);
+		$this->db->where('class_id', $class_id);
+		$this->db->update('classes', $data); 
+	}
 
 	public function get_teach_classes($teacher_id)
 	{

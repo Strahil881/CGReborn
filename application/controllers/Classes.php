@@ -105,6 +105,24 @@ class Classes extends CI_Controller{
 			$this->show_students_info($_SESSION['2class_id']);
 		}
     }
+    public function add_new_behaviour_name()
+    {
+        $this->load->library('form_validation');
+        $data['dynamic_view'] = 'classes/add_new_behaviour_name';
+        $this->load->view('admin/main_template', $data);
+    }
+    public function insert_new_behaviour_name()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('behaviour','Поведение','trim|required');
+        if($this->form_validation->run()=== FALSE)
+        {
+            $this->add_new_behaviour_name();
+        }else{
+            $this->classes_model->add_new_behaviour_name();
+            $this->add_new_behaviour_name();
+        }
+    }
 }
 
 ?>

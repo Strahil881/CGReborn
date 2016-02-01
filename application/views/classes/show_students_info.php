@@ -30,6 +30,9 @@
      	<td>'.$value['last_name'].'</td>
       	<td>'.$value['number'].'</td>
       	<td><a href="'.base_url().'index.php/classes/single_student_info/'.$value['student_id'].'"><button class="btn btn-warning">Редактирай</button></a></td>
+ 	<td><a href="'.base_url().'classes/delete_student/'.$value['student_id'].'"><button class="btn btn-danger">DELETE</button></a></td>
+        <td><a href="'.base_url().'classes/student_behaviours/'.$value['student_id'].'"><button class="btn btn-info">Поведение</button></a></td>
+        <td><a href="'.base_url().'classes/add_behaviour/'.$value['student_id'].'"><button class="btn btn-danger">Добави поведение </button></a></td>
  		</tr>';
       	 $br++;
   }

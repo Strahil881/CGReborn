@@ -82,6 +82,9 @@ class Classes extends CI_Controller{
 		$data['dynamic_view'] = 'classes/show_students_info';
         $this->load->view('admin/main_template', $data);
 	}
+	 public function delete_student($student_id=1){
+         $this->classes_model->delete_student($student_id);
+    }
 	 public function single_student_info($student_id = 1)
     {   
     	$this->load->library('session');

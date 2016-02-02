@@ -141,6 +141,16 @@ class Classes_model extends CI_Model{
 		return $query->result_array();
 
 	}
+	public function behaviour_info($behaviour_id)
+	{
+		$this->db->select('*');
+		$this->db->from('grades_behaviour');
+		$this->db->join('n_behaviour', 'grades_behaviour.behaviour_id = n_behaviour.behaviour_id');
+		$this->db->join('students', 'grades_behaviour.student_id = students.student_id');
+		$this->db->where('grade_behaviour_id', $behaviour_id);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 	public function add_new_behaviour_name()
 	{
 		$data=array(

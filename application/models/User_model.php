@@ -173,7 +173,7 @@ class User_model extends CI_Model{
     {   
         //$this->db->delete('teachers', array('user_id' => $id));
        // if($this->db->delete('users', array('user_id' => $id)))
-       / {
+       // {
         //    return TRUE;
        // }
        // return FALSE;

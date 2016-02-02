@@ -165,6 +165,16 @@ class Classes_model extends CI_Model{
 		$query=$this->db->get('n_behaviour');
 		return $query->result_array();
 	}
+	public function add_behaviour()
+	{
+		$data=array(
+			'behaviour_id'=> $this->input->post('behaviour'),
+			'student_id'=> $this->input->post('student_id'),
+			'grade'=> $this->input->post('grade'),
+			'note'=> $this->input->post('note')
+			);
+		$this->db->insert('grades_behaviour',$data);
+	}
 	public function add_new_behaviour_name()
 	{
 		$data=array(

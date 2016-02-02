@@ -122,6 +122,19 @@ class Classes extends CI_Controller{
         $data['dynamic_view'] = 'classes/update_behaviour';
         $this->load->view('admin/main_template', $data);
     }
+     public function update_behaviour()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('grade','Оценка','trim|required');
+        $this->form_validation->set_rules('note','Бележка','trim|required');
+        if($this->form_validation->run()=== FALSE)
+        {
+            $this->behaviour_info($_SESSION['behaviour_id']);
+        }else{
+            $this->classes_model->update_behaviour();
+            $this->show_students_info($_SESSION['2class_id']);
+            
+        }
     public function add_new_behaviour_name()
     {
         $this->load->library('form_validation');

@@ -8,26 +8,35 @@
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                <div class="col-lg-12">
+                 <div class="row">
+                   
+            <div class="col-lg-11">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                                    <div class="table-responsive">
+
+                
                     <?php
                     $n=1;
                     $br=1;
-                    echo "<table border='1'>";
+                    echo "<thead>
+                    <table class='table table-striped table-bordered table-hover custab'>";
                     echo "<tr>
                         <td>#</td>
                         <td>Клас</td>
-                        <td>Предмет</td>
-                        <td>Ученици</td>
+                        <td>Паралелка</td>
                         <td>Учебан година</td>
-                        </tr>";
+                        <td>Ученици</td>
+                        </tr>
+                        </thead>";
                     foreach ($show_classes as $key => $value) {
                        echo '<tr>
                         <td>'.$n.'</td>
                         <td>'.$value['n_class'].'</td>
-                        <td>'.$value['year'].'</td>
                         <td>'.$value['class_class'].'</td>
-                        <td><a href="'.base_url().'index.php/classes/show_students_info/'.$value['class_id'].'"><button class="btn btn-warning">Покажи</button></a></td>
-                        <td><a href="'.base_url().'classes/delete_class/'.$value['class_id'].'"><button class="btn btn-danger">Изтрий</button></a></td>
+                        <td>'.$value['year'].'</td>
+                       <td><a href="'.base_url().'index.php/classes/show_students_info/'.$value['class_id'].'"><button class="btn btn-info">Покажи</button></a></td>
                         </tr>';
                        $n++;
                     }
@@ -35,7 +44,15 @@
 
 
                     ?>
-                      </div>
+                    
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
         <!-- /. PAGE WRAPPER  -->
 <script type="text/javascript">
     $(document).ready(function(){

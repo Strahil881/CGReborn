@@ -8,11 +8,23 @@
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                <div class="col-lg-12">
+
+                  <div class="row">
+                   
+            <div class="col-lg-12 ">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                    <div class="table-responsive">
+                                   
+        
                     <?php
                     $n=1;
                     $br=1;
-                    echo "<table border='1'>";
+                    echo " <table class='table table-striped table-bordered table-hover custab'>
+    <thead>
+    ";
                     echo "<tr>
                         <td>#</td>
                         <td>Клас</td>
@@ -32,6 +44,15 @@
 
 
                     ?>
+                      </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
                       </div>
         <!-- /. PAGE WRAPPER  -->
 <script type="text/javascript">

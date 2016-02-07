@@ -41,27 +41,36 @@ class Doi_model extends CI_Model
 	}
 
 
-	public function insert_doi($data)
-	{
+	public function insert_doi()
+	{	$subject=$this->input->post('subject');	
+		$class=$this->input->post('class');	
+	$data = array(
+       	'profile_short' => $this->input->post('profile_short'),
+       'profile' => $this->input->post('profile'),
+       'criteria' =>$this->input->post('criteria'),
+       'class' => $class+1,
+       'n_subject_id' => $subject+1
+        );
+        
+     
 		$this->db->insert('doi_categories', $data);
 	 	
 	 }
 
 	 public function update_doi()
-    {
-       
-       $data = array(
+    {	$class=$this->input->post('class');
+    	$subject=$this->input->post('subject');
+        $data = array(
+       	'profile_short' => $this->input->post('profile_short'),
        'profile' => $this->input->post('profile'),
        'criteria' =>$this->input->post('criteria'),
-       'class' => $this->input->post('class'),
+       'class' => $class,
+       'n_subject_id' => $subject
         );
-        $subject=$this->input->post('subject');
-       	$data2 = array( 'subject_id' => $subject+1);
         $this->db->where('doi_id', $this->input->post('id_of_doi'));
         $this->db->update('doi_categories', $data);
-             $this->db->update('n_subject', $data2);
+             
     }
-
     public function delete_doi($id) 
     {
     		$this->db->where('doi_id', $id);

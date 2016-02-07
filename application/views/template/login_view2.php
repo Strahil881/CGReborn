@@ -20,8 +20,8 @@
     #logo 
     {
         position: fixed;
-        margin-left: 540px;
-        width: 300px;
+        margin-left: 35%;
+        width: 30%;
         height: auto;
         
     }
@@ -29,37 +29,40 @@
         z-index: -2;
     position:fixed;
          width:100%;
-          height:auto;
+          height:100%;
           
     }
     .form-group
     {
         background-color: rgba(0, 0, 0, 0.5);
-        background-size: 20px 60px;
-        width: 500px;
-        height: auto;
+       
+
+        width: 35%;
+        height: 45%;
         position: fixed;
-        margin-top: 190px;
-        margin-left: 440px;
-        padding-bottom: 10px;
+        margin-top: 10%;
+        margin-left: 30%;
+        padding-bottom: 10%;
         border-radius: 25px;
         text-align: center;
+
 
     }
     #email 
     {
-        width: 300px;
+        width: 55%;
         height: auto;
-        padding-top: 10px;
-        padding-left: 40px;
-        padding-bottom: 20px;
+        padding-top: 5%;
+        padding-left: 9%;
+        padding-bottom: 5%;
+        
     }
     #password 
     {
-        width: 300px;
+        width:  55%;
         height: auto;
-        padding-left: 40px;
-        margin-top: 10px;
+        padding-left: 9%;
+        margin-top: 3%;
 
 
     }
@@ -67,11 +70,11 @@
     #submit_btn
     {
         
-        width: 140px;
+        width: 40%;
         height: auto;
-        padding-left: 40px;
-         margin-top: 20px;
-         margin-left: 130px;
+        padding-left: 13%;
+         margin-top: 2%;
+         margin-left: 12%;
 
     }
 

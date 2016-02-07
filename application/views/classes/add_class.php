@@ -3,16 +3,21 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Класове
+                            Добави Клас
                         </h1>
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                <div class="col-lg-12">
+                  <div class="row">
+                   <div class="col-md-4" >
+                  <div class="panel panel-primary">
+                  <div class="panel-heading">Добави нов клас :</div>
+                 <div class="panel-body">
+                            <div class="table-responsive">
+                      <table class='table table-striped table-bordered table-hover custab'>
                     <?php
                      echo validation_errors();
-    $this->output->enable_profiler(TRUE);
-    $this->benchmark->mark('code_start');
+    
      echo form_open('classes/insert_new_class');
      //Dropdown за класа
      echo "Клас";
@@ -65,10 +70,12 @@
     echo "</select>";
     $submit=array(
         'type'=>'submit',
+        'class'=>'btn btn-primary',
         'name'=>'send',
-        'value'=>'Готово!!!'
+        'value'=>'Добави'
     );
      $num=array(
+    'class'=>'form-control',
     'type'=>'text',
     'name'=>'num');
     echo "Брой на учениците";
@@ -76,13 +83,20 @@
 
 
 
-
+    echo "</br>";
     echo form_input($submit);
     $this->benchmark->mark('code_end');
     echo $this->benchmark->elapsed_time('code_start','code_end');
 
 ?>
-                     </div>
+</table>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
         <!-- /. PAGE WRAPPER  -->
 <script type="text/javascript">
     $(document).ready(function(){
